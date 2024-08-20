@@ -1,0 +1,4 @@
+**/node_modules/**
+.idea/**
+resource/packages/**/picture/**
+resource/packages/**/example-export/**

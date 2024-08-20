@@ -1,0 +1,45 @@
+{
+  "name": "moripa-programming-beginner-docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare": "panda codegen",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages@1",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts"
+  },
+  "dependencies": {
+    "@ark-ui/react": "^3.4.0",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "hono": "^4.4.9",
+    "lucide-react": "^0.398.0",
+    "next": "^14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-markdown": "^9.0.1",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.0",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.12.0",
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "@pandacss/dev": "^0.41.0",
+    "@park-ui/panda-preset": "^0.38.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "eslint-plugin-next-on-pages": "^1.12.0",
+    "typescript": "^5",
+    "vercel": "^32.3.0",
+    "wrangler": "^3.62.0"
+  }
+}

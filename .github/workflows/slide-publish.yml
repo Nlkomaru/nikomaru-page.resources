@@ -1,0 +1,57 @@
+name: Slide Publish
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'resource/**'
+
+defaults:
+  run:
+    working-directory: resource
+
+jobs:
+  build:
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_EC2_METADATA_DISABLED: true
+      AWS_REGION: auto
+      S3_UPLOAD_BUCKET: ${{ secrets.S3_UPLOAD_BUCKET }}
+      S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name : Remove template
+        run: |
+          rm -rf packages/template
+
+      - name : Install npm dependency
+        run: |
+          corepack enable
+          yarn set version stable
+          yarn config set -H enableImmutableInstalls false
+          yarn install
+          
+      - name : Reset bucket
+        run: |
+          aws s3 rm s3://$S3_UPLOAD_BUCKET --endpoint-url $S3_ENDPOINT --recursive
+
+      - name: Build Setup
+        run: |
+          cd packages
+          find -name "package.json" | xargs sed 's/\$S3_UPLOAD_BUCKET/$S3_UPLOAD_BUCKET/g'
+          find -name "package.json" | xargs sed 's/\$S3_ENDPOINT/$S3_ENDPOINT/g'
+
+      - name: Upload to S3
+        run: |
+          yarn workspaces foreach -A run publish

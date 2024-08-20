@@ -1,0 +1,19 @@
+{
+  "name": "container-1",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "publish": "slidev build --base /$npm_package_name && cp -r picture dist && cp -r static dist && cp docs.md dist && aws s3 cp dist --endpoint-url $S3_ENDPOINT s3://$S3_UPLOAD_BUCKET/$npm_package_name --recursive",
+    "screenshot": "slidev export --format png --output picture  --wait 10000 && ls -l picture"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.49.11",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "playwright-chromium": "^1.41.2",
+    "vue": "^3.4.29"
+  }
+}

@@ -1,0 +1,140 @@
+@layer reset, base, tokens, recipes, utilities;
+
+.markdown {
+    color: #1a202c;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.markdown > * + * {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.markdown li + li {
+    margin-top: 0.25rem;
+}
+
+.markdown li > p + p {
+    margin-top: 1.5rem;
+}
+
+.markdown strong {
+    font-weight: 600;
+}
+
+.markdown a {
+    color: #3182ce;
+    font-weight: 600;
+}
+
+.markdown strong a {
+    font-weight: 700;
+}
+
+.markdown h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin: 0.67em 0;
+    padding: 0;
+}
+
+.markdown h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin: 0.83em 0;
+    padding: 0;
+}
+
+.markdown h3 {
+    line-height: 1.25;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.markdown h4 {
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.markdown h5 {
+    line-height: 1.5;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.markdown h6 {
+    line-height: 1.5;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #718096;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.markdown blockquote {
+    font-size: 1rem;
+    border-left: 4px solid #cbd5e0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #718096;
+}
+
+.markdown code {
+    font-family: monospace;
+    font-size: 0.875rem;
+    display: inline;
+    background-color: #edf2f7;
+    border-radius: 0.25rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    line-height: 1.25;
+}
+
+.markdown pre {
+    background-color: #f7fafc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.markdown pre code {
+    display: block;
+    background-color: transparent;
+    padding: 0;
+    overflow: visible;
+    border-radius: 0;
+}
+
+.markdown ul {
+    font-size: 1rem;
+    padding-left: 2rem;
+    list-style-type: disc;
+}
+
+.markdown ol {
+    font-size: 1rem;
+    padding-left: 2rem;
+    list-style-type: decimal;
+}
+
+.markdown kbd {
+    font-size: 0.75rem;
+    display: inline-block;
+    border-radius: 0.25rem;
+    border: 1px solid;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    line-height: 1.25;
+    vertical-align: middle;
+    font-weight: 400;
+    font-family: monospace;
+}
