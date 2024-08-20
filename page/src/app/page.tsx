@@ -66,9 +66,9 @@ function getSlideInfo(slide: string, title: string): SlideInfo {
     return {
         slideTitle: title,
         slideName: slide,
-        slideUrl: `https://slide.moripa.nikomaru.dev/${slide}/index.html`,
-        pdfUrl: `https://slide.moripa.nikomaru.dev/${slide}/slidev-exported.pdf`,
-        imageUrl: `https://slide.moripa.nikomaru.dev/${slide}/picture/1.png`,
+        slideUrl: `https://resources.s3.nikomaru.dev/${slide}/index.html`,
+        pdfUrl: `https://resources.s3.nikomaru.dev/${slide}/slidev-exported.pdf`,
+        imageUrl: `https://resources.s3.nikomaru.dev/${slide}/picture/1.png`,
     }
 }
 
