@@ -6,7 +6,7 @@
     "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export",
-    "publish": "slidev build --base /$npm_package_name && cp -r picture dist && cp -r static dist && cp docs.md dist && aws s3 cp dist --endpoint-url $S3_ENDPOINT s3://$S3_UPLOAD_BUCKET/$npm_package_name --recursive",
+    "publish": "slidev build --base /$npm_package_name && cp -r static dist && cp docs.md dist && aws s3 cp dist --endpoint-url $S3_ENDPOINT s3://$S3_UPLOAD_BUCKET/$npm_package_name --recursive",
     "screenshot": "slidev export --format png --output picture  --wait 10000 && ls -l picture"
   },
   "dependencies": {
