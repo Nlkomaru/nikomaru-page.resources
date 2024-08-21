@@ -41,3 +41,4 @@ download: true
 # 参考文献
 
 - [Kubernetes Overview](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
+- 小笠原種高 著. 仕組みと使い方がわかるDocker & Kubernetesのきほんのきほん, マイナビ出版, 2021.1, (Compass Infrastructure). 978-4-8399-7274-5. 

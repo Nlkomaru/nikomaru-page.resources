@@ -63,7 +63,7 @@ sequenceDiagram
 
 # Dockerfileについて
 
-DOckerイメージを作成するための手順書のようなもの
+Dockerイメージを作成するための手順書のようなもの
 
 ```dockerfile
 # ベースイメージの指定
